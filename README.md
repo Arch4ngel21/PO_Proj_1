@@ -15,7 +15,7 @@ Znane błędy i niedokończone rzeczy:
  - Pozostały gdzieniegdzie nieusunięte zakomentowane linijki kodu/komentarze TODO. Starałem się zdążyć przed
    północą z przesłaiem na GitHuba, stąd mogłem coś pominąć.
  - Taką pozostałością jest również np. funkcja 'positionChanged' w interfejsie 'IMapElement' i w konsekwencji w klasie abstrakcyjnej
-   AbstractMapElement, której w początkowym zamyśle było wykonywanie określonych operacji w momencie, gdy zarejestrowaliśmy poruszenie
+   'AbstractMapElement', której w początkowym zamyśle było wykonywanie określonych operacji w momencie, gdy zarejestrowaliśmy poruszenie
    zwierzęcia, jednak została ona zaimplementowana na poziomie mapy.
    
    
