@@ -154,14 +154,14 @@ public class App extends Application {
 
         // Grass Energy
         Label grassLabel = new Label("Grass energy: ");
-        TextField grassField = new TextField("100");
+        TextField grassField = new TextField("1000");
         HBox grassEnergyBox = new HBox();
         grassEnergyBox.getChildren().addAll(grassLabel, grassField);
         grassEnergyBox.setAlignment(Pos.CENTER);
 
         // Animal Start Energy
         Label startEnergyLabel = new Label("Animal's start energy: ");
-        TextField startEnergyField = new TextField("100");
+        TextField startEnergyField = new TextField("200");
         HBox startEnergyBox = new HBox();
         startEnergyBox.getChildren().addAll(startEnergyLabel, startEnergyField);
         startEnergyBox.setAlignment(Pos.CENTER);
@@ -175,7 +175,7 @@ public class App extends Application {
 
         // Animals Spawn
         Label animalsSpawnLabel = new Label("Animals spawn: ");
-        TextField animalsSpawnField = new TextField("20");
+        TextField animalsSpawnField = new TextField("100");
         HBox animalsSpawnBox = new HBox();
         animalsSpawnBox.getChildren().addAll(animalsSpawnLabel, animalsSpawnField);
         animalsSpawnBox.setAlignment(Pos.CENTER);
@@ -215,7 +215,6 @@ public class App extends Application {
 
                     errorLabel.setText("");
 
-                    // TODO - start a new Scene / start a simulation
                     engine = new SimulationEngine(mapHeight, mapWidth, jungleRatio, grassEnergy, animalStartEnergy,
                             dailyEnergyCost, animalsSpawn, drawThread, saveStatisticsThread, animalImage, grassImage, onImageClick);
 
@@ -503,7 +502,6 @@ public class App extends Application {
 
         // --- Statystyki zaznaczonego zwierzęcia ---
         VBox selectedAnimaVBox = new VBox();
-        // selectedAnimaVBox.setPrefSize(80, 500);
         selectedAnimaVBox.setMaxSize(400, 1200);
         selectedAnimaVBox.setPrefSize(300, 500);
         selectedAnimaVBox.setStyle("-fx-border-color: black; -fx-border-image-insets: 5");
@@ -609,7 +607,6 @@ public class App extends Application {
         primaryStage.show();
     }
 
-    // TODO
     public void updateSelectedAnimalStatistics(Stage primaryStage)
     {
         selectedAnimalLabel.setText("Selected Animal: " + String.valueOf(engine.getObservedAnimal().getElementIndex()));
@@ -662,7 +659,6 @@ public class App extends Application {
                     animal = engine.getSteppeMap().elementAt(new Vector2d(element_x-1, mapHeight - element_y));
                 }
 
-                // TODO - Wyświetlanie statystyk zaznaczonego zwierzęcia
                 engine.setObservedAnimal((Animal) animal);
                 engine.addObservedAnimal((Animal) animal);
                 ((Animal) animal).setObserved(true);
